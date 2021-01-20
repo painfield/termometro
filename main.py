@@ -18,7 +18,7 @@ class NumberInput():
     def on_event(self,event):
         strValue = str(self.value())
 
-        if event.unicode.isdigit() and len(strValue)<9:
+        if event.unicode.isdigit() and len(strValue) <= 8:
             strValue += event.unicode
             self.value(int(strValue))
 
@@ -139,9 +139,6 @@ class mainApp():
         self.entrada = NumberInput()
         self.entrada.pos((106,58))
         self.entrada.size((133,28))
-        
-        self.entrada.value(36)
-        
         self.selector = Selector()
         
     def __on_close(self):
